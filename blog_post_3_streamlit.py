@@ -12,7 +12,9 @@ st.set_page_config(
 # Function to load data
 @st.cache_data
 def load_data():
-    df = pd.read_csv('C:/Users/rladl/Documents/another-stat386-theme/_posts/baseball data.csv')
+    url = 'https://raw.githubusercontent.com/InjoongK/injoong-blog/refs/heads/main/_posts/baseball%20data.csv'
+    df = pd.read_csv(url)
+    #df = pd.read_csv('C:/Users/rladl/Documents/another-stat386-theme/_posts/baseball data.csv')
     df = df.loc[:, ~df.columns.str.contains('^Unnamed')]
     df = df[df['Team'] != '2TM']
     return df
