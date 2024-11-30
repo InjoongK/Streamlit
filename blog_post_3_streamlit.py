@@ -31,7 +31,6 @@ with st.sidebar:
     st.title("MLB Power Hitting Analysis")
     st.image("https://upload.wikimedia.org/wikipedia/commons/a/a6/Major_League_Baseball_logo.svg", width=280)
     
-    # First interactive element: Metric selector
     analysis_type = st.radio(
         "Select Analysis Type",
         ["Power Metrics Overview", "Team Analysis", "Custom Analysis"]
@@ -54,8 +53,7 @@ with st.sidebar:
 # Main content
 if analysis_type == "Power Metrics Overview":
     st.title("Power Hitting Metrics Overview")
-    
-    # Third interactive element: Tabs for different visualizations
+
     tab1, tab2, tab3 = st.tabs(["HR/AB Rankings", "ISO Rankings", "Correlation Analysis"])
     
     with tab1:
@@ -69,7 +67,6 @@ if analysis_type == "Power Metrics Overview":
         )
         st.plotly_chart(hr_ab_fig, use_container_width=True)
         
-        # Search for a player (only for HR/AB Rankings)
         search_query_hr_ab = st.text_input("Search for a player:", key="player_search_hr_ab", placeholder="Start typing a player's name...")
         
         if search_query_hr_ab:
@@ -98,7 +95,6 @@ if analysis_type == "Power Metrics Overview":
         )
         st.plotly_chart(iso_fig, use_container_width=True)
         
-        # Search for a player (only for ISO Rankings)
         search_query_iso = st.text_input("Search for a specific player:", key="player_search_iso", placeholder="Start typing a player's name...")
 
         if search_query_iso:
@@ -132,13 +128,11 @@ if analysis_type == "Power Metrics Overview":
 elif analysis_type == "Team Analysis":
     st.title("Team Power Analysis")
     
-    # Fourth interactive element: Team metrics
     team_metric = st.selectbox(
         "Select Team Metric",
         ["Average HR/AB", "Average ISO", "Total Home Runs"]
     )
     
-    # Calculate team metrics
     if team_metric == "Average HR/AB":
         team_stats = df.groupby('Team')['Home Runs per At Bat'].mean().reset_index()
         y_col = 'Home Runs per At Bat'
@@ -160,7 +154,6 @@ elif analysis_type == "Team Analysis":
 elif analysis_type == "Custom Analysis":
     st.title("Custom Analysis")
     
-    # Fifth interactive element: Custom scatter plot
     col1, col2 = st.columns(2)
     with col1:
         x_axis = st.selectbox(
