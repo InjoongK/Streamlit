@@ -125,7 +125,7 @@ if analysis_type == "Power Metrics Overview":
         st.plotly_chart(scatter_fig, use_container_width=True)
 
 
-elif analysis_type == "Team Analysis":
+elif analysis_type == "Team Power Analysis":
     st.title("Team Power Analysis")
     
     team_metric = st.selectbox(
