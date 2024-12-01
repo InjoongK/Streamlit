@@ -33,7 +33,7 @@ with st.sidebar:
     
     analysis_type = st.radio(
         "Select Analysis Type",
-        ["Power Metrics Overview", "Team Analysis", "Custom Analysis"]
+        ["Power Metrics Overview", "Team Power Analysis", "Custom Analysis"]
     )
     
     if analysis_type == "Power Metrics Overview":
