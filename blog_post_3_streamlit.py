@@ -179,7 +179,7 @@ elif analysis_type == "Custom Analysis":
 
 st.markdown("""---""")
 st.markdown("""
-    💡 **Metric Definitions:**
+     **Metric Definitions**
     - **HR/AB**: Home Runs per At Bat - measures home run efficiency
     - **ISO**: Isolated Power - represents a player’s pure slugging power by focusing on extra-base hits (doubles, triples, and home runs).
     - **SLG**: Slugging Percentage - an expected figure of how many bases a batter can get on base after hitting
